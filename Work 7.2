@@ -1,1 +1,7 @@
-
+<?php
+function card($book_name ="-", $author = "-", $year = "-", $publishinghouse = "-", $cart = "-") 
+{
+    return "Вы заказали: Навзание книги: $book_name Автор: $author Год: $year Издательство: $publishinghouse Каталог: $cart \n" ;
+}
+echo card("Портрет Дориана Грея","Оскар Уайльд", "1890 год", "ACT", "978-5-389-04564-4" );
+echo card();
