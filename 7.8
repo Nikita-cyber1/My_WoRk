@@ -1,0 +1,25 @@
+<?php
+$text = "04.01.2020\n";
+$text.= "31.12.2021\n";
+$text.= "31.12.2025\n";
+
+// функция обратного вызова
+function next_year($matches)
+{
+  return $matches[0] . " года";
+}
+function month($matches)
+{
+    //$matches[0]
+    $m = "";
+    switch( $matches[0]){
+    case ".01.": $m=" января ";break;
+    case ".12.": $m=" декабря ";break;
+    default: $m = "_";
+    }
+    return $m;
+}
+$str = preg_replace_callback("/\d{4}/", "next_year", $text);
+//echo $str;
+$str = preg_replace_callback("/\.\d{2}\./", "month", $text);
+echo $str;
